@@ -231,7 +231,7 @@ const Contact = () => {
             <AddressBookIcon fill='#bababa' className='w-5 h-5 mr-2' /> Contact{" "}
           </div>
           <div
-            onClick={() => setDrawerOpen(true)}
+            onClick={() => setDrawerOpen(!drawerOpen)}
             className=' cursor-pointer h-8 w-8  rounded-full flex justify-center items-center hover:bg-pink'
           >
             <PencilIcon fill='#BE212A' className='w-4 h-4 cursor-pointer' />{" "}
