@@ -3,7 +3,7 @@ import { PencilIcon, TickIcon } from "../assets/Svgs";
 
 const Editable = ({ text }) => {
   const [edit, setEdit] = useState(false);
-  const [value, setValue] = useState({ text });
+  const [value] = useState({ text });
   const ref = useRef(null);
   const handleEdit = () => {
     if (!edit) {
