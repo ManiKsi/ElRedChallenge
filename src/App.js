@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
-import SideDrawer from "./components/SideDrawer";
 import AppProvider from "./Context";
 
 function App() {

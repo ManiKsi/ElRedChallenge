@@ -1,19 +1,5 @@
 import React from "react";
-import {
-  AddressBookIcon,
-  FacebookIcon,
-  GlobeIcon,
-  InstagramIcon,
-  LinkIcon,
-  LocationPin,
-  MailIcon,
-  PencilIcon,
-  PhoneIcon,
-  QuotesIcon,
-  Suitcase,
-  TickIcon,
-  TwitterIcon,
-} from "../../assets/Svgs";
+
 import Address from "./Info-components/Address";
 import Contact from "./Info-components/Contact";
 import HoOperations from "./Info-components/HoOperations";
