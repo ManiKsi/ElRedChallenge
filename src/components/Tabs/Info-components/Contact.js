@@ -15,6 +15,7 @@ const Contact = () => {
   const [editIndex, setEditIndex] = useState(0);
   const [tempEmails, setTempEmails] = useState([]);
   const [tempPhones, setTempPhones] = useState([]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [data, setData] = useState([
     {
       title: "Sales Team",
@@ -39,6 +40,20 @@ const Contact = () => {
   ]);
   const [tempData, setTempData] = useState([...data]);
   const handleSave = () => {
+    if (edit) {
+      let array = [...tempData];
+      if (tempEmails) {
+        array[editIndex].emails.push(...tempEmails);
+      }
+      if (tempEmails) {
+        array[editIndex].phones.push(...tempPhones);
+      }
+      setTempData(array);
+      setEdit(false);
+    }
+    if (!edit) {
+      setDrawerOpen(false);
+    }
     setData(tempData);
   };
   const handleDelete = (i) => {
@@ -48,13 +63,34 @@ const Contact = () => {
     setEditIndex(i);
     setEdit(true);
   };
+  const addEmail = (e) => {
+    e.preventDefault();
+
+    setTempEmails([...tempEmails, e.target[0].value]);
+    e.target.reset();
+  };
+  const addPhone = (e) => {
+    e.preventDefault();
+    setTempPhones([...tempPhones, e.target[0].value]);
+    e.target.reset();
+  };
+  const handleBackBtn = () => {
+    if (!edit) {
+      setDrawerOpen(false);
+    }
+    if (edit) {
+      setEdit(false);
+    }
+  };
 
   return (
     <>
-      <SideDrawer open={true}>
+      <SideDrawer open={drawerOpen}>
         <div>
           <h4 className='text-xl font-semibold flex items-center'>
-            <LeftArrow className='h-4 w-4 mr-2' />
+            <div className=' cursor-pointer' onClick={() => handleBackBtn()}>
+              <LeftArrow className='h-4 w-4 mr-2' />
+            </div>
             Contact
           </h4>
           <span className='text-sm text-gray1'>
@@ -64,30 +100,50 @@ const Contact = () => {
 
         {edit ? (
           <div className='flex flex-col '>
-            <div className='my-4 mt-10'>
+            <form onSubmit={(e) => addEmail(e)} className='my-4 mt-10'>
               <div className='flex flex-col gap-2 mb-4'>
                 <label className='text-xs font-semibold'>Email ID</label>
+                {tempEmails?.length > 0 &&
+                  tempEmails?.map((email) => (
+                    <p key={email} className='text-xs '>
+                      {email}
+                    </p>
+                  ))}
                 <input
                   placeholder='eg. salestam@br.in'
-                  className=' bg-bg h-10 px-3 text-xs rounded-md'
+                  required
+                  type='email'
+                  className=' bg-bg h-10 px-3 text-xs rounded-md focus:outline-none'
                 />
               </div>
-              <button className='bg-pink w-full text-red font-semibold rounded-md h-10 text-sm flex items-center justify-center'>
+              <button
+                type='submit'
+                className='bg-pink w-full text-red font-semibold rounded-md h-10 text-sm flex items-center justify-center'
+              >
                 <AddIcon className='h-4 w-4 mr-1' stroke='#BE212A' /> Add More
               </button>
-            </div>
-            <div className='my-4'>
+            </form>
+            <form className='my-4' onSubmit={(e) => addPhone(e)}>
               <div className='flex flex-col gap-2 mb-4'>
                 <label className='text-xs font-semibold'>Contact Number</label>
+                {tempPhones?.length > 0 &&
+                  tempPhones?.map((phone) => (
+                    <p key={phone} className='text-xs '>
+                      {phone}
+                    </p>
+                  ))}
                 <input
                   placeholder='eg. 8511591740'
-                  className=' bg-bg h-10 px-3 text-xs rounded-md'
+                  className=' bg-bg h-10 px-3 text-xs rounded-md focus:outline-none'
                 />
               </div>
-              <button className='bg-pink w-full text-red font-semibold rounded-md h-10 text-sm flex items-center justify-center'>
+              <button
+                type='submit'
+                className='bg-pink w-full text-red font-semibold rounded-md h-10 text-sm flex items-center justify-center'
+              >
                 <AddIcon className='h-4 w-4 mr-1' stroke='#BE212A' /> Add More
               </button>
-            </div>
+            </form>
           </div>
         ) : (
           <div className='flex flex-col flex-grow overflow-y-scroll scroll-hide gap-4 py-4 '>
@@ -174,7 +230,10 @@ const Contact = () => {
           <div className='text-lg font-semibold flex items-center'>
             <AddressBookIcon fill='#bababa' className='w-5 h-5 mr-2' /> Contact{" "}
           </div>
-          <div className=' cursor-pointer h-8 w-8  rounded-full flex justify-center items-center hover:bg-pink'>
+          <div
+            onClick={() => setDrawerOpen(true)}
+            className=' cursor-pointer h-8 w-8  rounded-full flex justify-center items-center hover:bg-pink'
+          >
             <PencilIcon fill='#BE212A' className='w-4 h-4 cursor-pointer' />{" "}
           </div>
         </div>

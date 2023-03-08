@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AtinkLogo from "../assets/A.T-inks-logo-600-DPI-1-e1545645137933.png";
 import { VerifiedIcon } from "../assets/Svgs";
 import Editable from "./Editable";
@@ -10,6 +10,17 @@ import Privacy from "./Tabs/Privacy";
 import Terms from "./Tabs/Terms";
 
 const About = () => {
+  const [verified, setVerified] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const handleVerify = () => {
+    if (!verified) {
+      setLoading(true);
+      setTimeout(() => {
+        setVerified(true);
+        setLoading(false);
+      }, 1000);
+    }
+  };
   return (
     <div>
       <h2 className='font-bold text-xl'>About us</h2>
@@ -22,10 +33,23 @@ const About = () => {
             <div className=' flex items-center'>
               <span className='text-xl font-bold'>A.T.Inks</span>
               <div className='flex items-center ml-7'>
-                <VerifiedIcon fill='#BABABA' className=' w-5 h-5' />
-                <a href='#' className=' ml-1 text-xxs text-blue-400 underline'>
-                  Verify Company
-                </a>
+                {loading ? (
+                  <div class='custom-loader'></div>
+                ) : (
+                  <VerifiedIcon
+                    fill={`${verified ? "blue" : "#BABABA"}`}
+                    className=' w-5 h-5'
+                  />
+                )}
+                {!loading && (
+                  <p
+                    onClick={() => handleVerify()}
+                    href='#'
+                    className=' cursor-pointer ml-1 text-xxs text-blue-400 underline'
+                  >
+                    {verified ? "Verified" : "Verify Company"}
+                  </p>
+                )}
               </div>
             </div>
             <span className='text-sm text-gray1'>Digital Inks</span>

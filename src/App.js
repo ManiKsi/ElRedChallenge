@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <AppProvider>
         <Header username='Mani' cartCount={200} />
-        <section className='px-5 gap-5 mt-6 flex'>
+        <section className='px-5 gap-5 mt-20 flex'>
           <Sidebar />
           <Main />
         </section>

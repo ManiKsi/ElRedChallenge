@@ -6,7 +6,7 @@ import { CaretIcon, CartIcon, ElRedLogo, Search } from "../assets/Svgs";
 
 const Header = ({ username, cartCount }) => {
   return (
-    <header className=' bg-white px-5 py-2 '>
+    <header className=' bg-white px-5 py-2 fixed top-0 left-0 right-0 z-20 shadow-sm'>
       <div className='flex w-full px-5 items-center'>
         <div className='w-52'>
           <div className='flex items-center'>
@@ -33,7 +33,7 @@ const Header = ({ username, cartCount }) => {
           />
         </div>
         <div className='flex ml-auto '>
-          <button className='flex items-center text-white rounded-md font-semibold text-xxs bg-black px-8'>
+          <button className='flex items-center text-white rounded-md font-semibold text-xxs bg-black px-8 hover:bg-gray-900'>
             <CartIcon
               stroke='#fff'
               height='20px'

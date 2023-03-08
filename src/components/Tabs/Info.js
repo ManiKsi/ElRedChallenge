@@ -22,7 +22,7 @@ import Statement from "./Info-components/Statement";
 
 const Info = () => {
   return (
-    <div className='py-2 flex gap-4 flex-wrap'>
+    <div className='py-4 flex gap-4 flex-wrap'>
       <Contact />
       <Address />
       <HoOperations />
