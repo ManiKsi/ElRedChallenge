@@ -3,7 +3,7 @@ import { PencilIcon, TickIcon } from "../assets/Svgs";
 
 const Editable = ({ text }) => {
   const [edit, setEdit] = useState(false);
-  const [value] = useState({ text });
+  const [value, setValue] = useState({ text });
   const ref = useRef(null);
   const handleEdit = () => {
     if (!edit) {
@@ -14,6 +14,9 @@ const Editable = ({ text }) => {
       setEdit(false);
     }
   };
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <div className=' relative  '>
       {/* border p-4 */}
@@ -21,6 +24,7 @@ const Editable = ({ text }) => {
         id='text'
         ref={ref}
         value={value}
+        onChange={(e) => handleChange(e)}
         contentEditable={edit}
         className={` focus:outline-none leading-7   rounded-md text-sm text-textGray  ${
           edit && "border p-4"
