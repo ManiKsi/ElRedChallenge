@@ -37,6 +37,26 @@ const Contact = () => {
       emails: ["salesteam@break.in", "salesteam2@break.in"],
       phones: ["9133019310", "8923242443"],
     },
+    {
+      title: "Marketing Team",
+      emails: ["salesteam@break.in", "salesteam2@break.in"],
+      phones: ["9133019310", "8923242443"],
+    },
+    {
+      title: "Marketing Team",
+      emails: ["salesteam@break.in", "salesteam2@break.in"],
+      phones: ["9133019310", "8923242443"],
+    },
+    {
+      title: "Marketing Team",
+      emails: ["salesteam@break.in", "salesteam2@break.in"],
+      phones: ["9133019310", "8923242443"],
+    },
+    {
+      title: "Marketing Team",
+      emails: ["salesteam@break.in", "salesteam2@break.in"],
+      phones: ["9133019310", "8923242443"],
+    },
   ]);
   const [tempData, setTempData] = useState([...data]);
   const handleSave = () => {
@@ -151,13 +171,13 @@ const Contact = () => {
               return (
                 <div
                   key={i}
-                  className='border rounded-md p-4 shrink-0  h-40    font-medium  '
+                  className='border rounded-md p-4 shrink-0      font-medium  '
                 >
                   <div className='flex justify-between '>
                     <div className='text-sm font-semibold flex items-center'>
                       <AddressBookIcon
                         fill='#bababa'
-                        className='w-5 h-5 mr-2'
+                        className='md:w-5 md:h-5 w-4 h-4 mr-2'
                       />{" "}
                       {item.title}
                     </div>
@@ -179,12 +199,12 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-                  <div className='flex   mt-6'>
+                  <div className='flex   md:mt-6 mt-4'>
                     <MailIcon
                       fill='#bababa'
                       className='w-4 h-4 mr-1 mt-[2px]'
                     />
-                    <div className=' text-sm pr-4'>
+                    <div className=' md:text-sm text-xs pr-4'>
                       <span>
                         {item?.emails?.map((email, i) => {
                           let string = `${email} ${
@@ -200,7 +220,7 @@ const Contact = () => {
                       fill='#bababa'
                       className='w-4 h-4 mr-1 mt-[2px]'
                     />
-                    <div className=' text-sm pr-4'>
+                    <div className=' md:text-sm text-xs pr-4'>
                       <span>
                         +91{" "}
                         {item?.phones?.map((phone, i) => {
@@ -225,22 +245,29 @@ const Contact = () => {
           Save
         </button>
       </SideDrawer>
-      <div className='border rounded-md p-4 shrink-0  min-h-[100px]   w-[32%] font-medium  '>
+      <div className='border rounded-md md:p-4 p-3 shrink-0  w-full   md:min-h-[150px] md:w-[32%] min-h-[120px]    font-medium  '>
         <div className='flex justify-between '>
-          <div className='text-lg font-semibold flex items-center'>
-            <AddressBookIcon fill='#bababa' className='w-5 h-5 mr-2' /> Contact{" "}
+          <div className='md:text-lg text-base font-semibold flex items-center'>
+            <AddressBookIcon
+              fill='#bababa'
+              className='md:w-5 md:h-5 mr-2 w-4 h-4'
+            />{" "}
+            Contact{" "}
           </div>
           <div
             onClick={() => setDrawerOpen(!drawerOpen)}
-            className=' cursor-pointer h-8 w-8  rounded-full flex justify-center items-center hover:bg-pink'
+            className=' cursor-pointer md:h-8 md:w-8  rounded-full flex justify-center items-center hover:bg-pink'
           >
             <PencilIcon fill='#BE212A' className='w-4 h-4 cursor-pointer' />{" "}
           </div>
         </div>
         {data[0]?.emails && (
-          <div className='flex justify-between  mt-6'>
-            <MailIcon fill='#bababa' className='w-4 h-4 mr-1 mt-[2px]' />
-            <div className=' text-sm pr-4'>
+          <div className='flex   md:mt-6 mt-4'>
+            <MailIcon
+              fill='#bababa'
+              className='md:w-5 md:h-5 w-4 h-4 mr-1 mt-[2px]'
+            />
+            <div className=' md:text-sm text-xs pr-4'>
               <span>
                 {data[0]?.emails?.map((email, i) => {
                   let string = `${email} ${
@@ -251,7 +278,7 @@ const Contact = () => {
               </span>
             </div>
             {data.length - 1 > 0 && (
-              <div className=' shrink-0 w-8 h-8 font-bold bg-pink rounded-full flex justify-center items-center'>
+              <div className=' ml-auto shrink-0 md:w-8 md:h-8 w-7 h-7 font-bold bg-pink rounded-full flex justify-center items-center'>
                 <span className=' text-red text-xxs'>+ {data.length - 1}</span>
               </div>
             )}
@@ -259,8 +286,11 @@ const Contact = () => {
         )}
         {data[0]?.phones && (
           <div className='flex mt-3'>
-            <PhoneIcon fill='#bababa' className='w-4 h-4 mr-1 mt-[2px]' />
-            <div className=' text-sm pr-4'>
+            <PhoneIcon
+              fill='#bababa'
+              className='md:w-4 md:h-4 w-3 h-3 mr-1 mt-[2px]'
+            />
+            <div className=' md:text-sm text-xs pr-4'>
               <span>
                 +91{" "}
                 {data[0]?.phones?.map((phone, i) => {

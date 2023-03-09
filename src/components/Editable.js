@@ -26,7 +26,7 @@ const Editable = ({ text }) => {
         value={value}
         onChange={(e) => handleChange(e)}
         contentEditable={edit}
-        className={` focus:outline-none leading-7   rounded-md text-sm text-textGray  ${
+        className={` focus:outline-none leading-7  pr-10 md:pr-0  rounded-md text-xs md:text-sm text-textGray  ${
           edit && "border p-4"
         }`}
       >

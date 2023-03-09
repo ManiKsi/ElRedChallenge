@@ -83,7 +83,7 @@ export const Users = (props) => (
     xmlns='http://www.w3.org/2000/svg'
     {...props}
   >
-    <path fill='#fff' d='M0 0h24v24H0z' />
+    <path fill='transparent' d='M0 0h24v24H0z' />
     <path
       fillRule='evenodd'
       clipRule='evenodd'

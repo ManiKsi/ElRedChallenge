@@ -2,6 +2,95 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @screen mbvs {
+    html {
+      font-size: 62%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbvs1 {
+    html {
+      font-size: 65%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbvs2 {
+    html {
+      font-size: 67%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbvs3 {
+    html {
+      font-size: 70%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbvs4 {
+    html {
+      font-size: 72%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbvs5 {
+    html {
+      font-size: 74%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbs {
+    html {
+      font-size: 75%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbs1 {
+    html {
+      font-size: 78%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbs2 {
+    html {
+      font-size: 80%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbs3 {
+    html {
+      font-size: 82%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm {
+    html {
+      font-size: 84%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm1 {
+    html {
+      font-size: 87%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm2 {
+    html {
+      font-size: 89%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm3 {
+    html {
+      font-size: 91%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm4 {
+    html {
+      font-size: 94%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbm5 {
+    html {
+      font-size: 97%; /* Makes 1rem =  */
+    }
+  }
+  @screen mbl {
+    html {
+      font-size: 100%; /* Makes 1rem = 16px */
+    }
+  }
+}
+
 body {
   background-color: #eff2f9;
   margin: 0;

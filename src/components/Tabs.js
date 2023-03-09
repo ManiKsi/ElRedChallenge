@@ -31,13 +31,16 @@ const Tabs = ({ tabs, tabsComponents }) => {
 
   return (
     <div>
-      <div>
-        <ul ref={ulRef} className='text-xs flex gap-8 font-medium text-gray1'>
+      <div className='scroll-hide overflow-x-scroll'>
+        <ul
+          ref={ulRef}
+          className='text-xs flex gap-8 scroll-hide font-medium  text-gray1 '
+        >
           {tabs.map((tab, i) => {
             return (
               <li
                 onClick={() => handleClick(i)}
-                className='pb-2 px-1 cursor-pointer'
+                className='pb-2 px-1 cursor-pointer flex-shrink-0'
                 key={i}
                 ref={addToRefs}
               >

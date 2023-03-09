@@ -3,7 +3,7 @@ import About from "./About";
 
 const Main = () => {
   return (
-    <section className='bg-white flex-grow  rounded-lg p-5 px-6'>
+    <section className='bg-white flex-grow  rounded-lg md:p-5 md:px-6 p-4 overflow-hidden'>
       <About />
     </section>
   );

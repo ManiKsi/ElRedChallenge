@@ -25,14 +25,14 @@ const About = () => {
     <div>
       <h2 className='font-bold text-xl'>About us</h2>
       <div>
-        <div className='flex items-center font-semibold   pt-8 mb-2'>
-          <div className=' border rounded-full h-16 w-16 flex items-center justify-center p-1 mr-3'>
-            <img src={AtinkLogo} alt='logo' className=' w-12  -mt-1' />
+        <div className='flex items-center font-semibold   md:pt-8 pt-4 mb-2'>
+          <div className=' border rounded-full md:h-16 md:w-16 h-12 w-12 flex items-center justify-center p-1 mr-3'>
+            <img src={AtinkLogo} alt='logo' className=' md:w-12 w-8  -mt-1' />
           </div>
           <div>
             <div className=' flex items-center'>
-              <span className='text-xl font-bold'>A.T.Inks</span>
-              <div className='flex items-center ml-7'>
+              <span className='md:text-xl text-sm font-bold'>A.T.Inks</span>
+              <div className='flex items-center md:ml-7 ml-5'>
                 {loading ? (
                   <div class='custom-loader'></div>
                 ) : (
@@ -52,10 +52,10 @@ const About = () => {
                 )}
               </div>
             </div>
-            <span className='text-sm text-gray1'>Digital Inks</span>
+            <span className='md:text-sm text-xs text-gray1'>Digital Inks</span>
           </div>
         </div>
-        <div className=' w-3/4'>
+        <div className=' md:w-3/4 w-full '>
           <Editable />
         </div>
 
