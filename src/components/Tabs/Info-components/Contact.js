@@ -245,7 +245,7 @@ const Contact = () => {
           Save
         </button>
       </SideDrawer>
-      <div className='border rounded-md md:p-4 p-3 shrink-0  w-full   md:min-h-[150px] md:w-[32%] min-h-[120px]    font-medium  '>
+      <div className='border rounded-md md:p-4 p-3 shrink-0  w-full   md:min-h-[160px] md:w-[32%] min-h-[120px]    font-medium  '>
         <div className='flex justify-between '>
           <div className='md:text-lg text-base font-semibold flex items-center'>
             <AddressBookIcon

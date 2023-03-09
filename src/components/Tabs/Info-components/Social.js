@@ -10,7 +10,7 @@ import {
 
 const Social = () => {
   return (
-    <div className='border rounded-md md:p-4 p-3  shrink-0 md:min-h-[150px] min-h-[120px]   w-full md:w-[32%] font-medium  '>
+    <div className='border rounded-md md:p-4 p-3  shrink-0 md:min-h-[160px] min-h-[120px]   w-full md:w-[32%] font-medium  '>
       <div className='flex justify-between'>
         <div className='md:text-lg text-base font-semibold flex items-center'>
           <LinkIcon fill='#bababa' className='md:w-5 md:h-5 h-4 w-4 mr-2' />

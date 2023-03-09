@@ -3,7 +3,7 @@ import { LocationPin, PencilIcon } from "../../../assets/Svgs";
 
 const Address = () => {
   return (
-    <div className='border rounded-md md:p-4 p-3 shrink-0 md:min-h-[150px] min-h-[120px]   md:w-[32%] w-full  font-medium  '>
+    <div className='border rounded-md md:p-4 p-3 shrink-0 md:min-h-[160px] min-h-[120px]   md:w-[32%] w-full  font-medium  '>
       <div className='flex justify-between'>
         <div className='md:text-lg text-base  font-semibold flex items-center'>
           <LocationPin fill='#bababa' className='md:w-6 md:h-6 w-5 h-5 mr-2' />{" "}
